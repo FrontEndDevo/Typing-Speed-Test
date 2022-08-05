@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="icon" href="Images/icon.svg" />
+    <title>Typing Speed Game</title>
+  </head>
+  <body>
+    <div class="game">
+      <!-- Game Name -->
+      <div class="title">Typing Speed Test</div>
+      <div class="container">
+        <div class="main-titles">
+          <!-- Level Options -->
+          <select class="level-select">
+            <option>Select Level</option>
+            <option value="Easy">Easy</option>
+            <option value="Normal">Normal</option>
+            <option value="Hard">Hard</option>
+          </select>
+
+          <!-- My Image -->
+          <img src="Images/let's play.svg" alt="" />
+        </div>
+
+        <!-- Playing Details -->
+        <div class="details">
+          Your playing in <span class="span-level"></span> level & You have
+          <span class="span-seconds"></span> seconds for each word.
+        </div>
+
+        <!-- Start Game Btn -->
+        <button class="start">Start Playing</button>
+
+        <!-- Div for the random word -->
+        <div class="random-word"></div>
+
+        <input class="input" type="text" placeholder="Write here" />
+
+        <!-- All The Words (will decrease each time) -->
+        <div class="words-box"></div>
+
+        <!-- Time Details (to know how much time is left & your current score) -->
+        <div class="time">
+          <div class="time-left">
+            Total Time left: <span class="seconds-left"></span> seconds
+          </div>
+          <div class="score">
+            Score: <span class="min-score"></span> from
+            <span class="max-score"></span>
+          </div>
+        </div>
+
+        <!-- The (Winning | Losing) message -->
+        <div class="finish-game"></div>
+      </div>
+    </div>
+
+    <script src="JS/script.js"></script>
+  </body>
+</html>

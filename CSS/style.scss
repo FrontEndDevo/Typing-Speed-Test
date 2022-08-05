@@ -1,0 +1,198 @@
+$main_color:#0468c5;
+$alt_color:#49c0b6;
+$result_color:#cf8d2e;
+$vars_color:#00a597;
+$alt_vars_color:#018b80;
+$main_transition: 0.5s;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(to right,#485563,#29323c);
+}
+
+.game{
+    min-height: 100vh;
+    
+    .title{
+            background-color: $main_color;
+            color:white;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 40px;
+            text-align: center;
+        }
+
+    .container{
+        margin: auto;
+        text-align: center;
+        max-width: 1200px;
+        
+        .main-titles{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            @media (max-width:767px) {
+                &{
+                    flex-direction: column;
+                }
+            }
+            // Level Options
+            .level-select{
+                margin: 20px 0;
+                padding: 10px;
+                font-size: 25px;
+                font-weight: bold;
+                background-color: #6a737b;
+                color: white;
+                border-radius: 10px;
+                text-align: center;
+              
+                &:focus{outline: none;}
+        }
+
+            img{
+                width: 500px;
+            }
+    }
+
+        // Game Details
+        .details{
+            background-color: white;
+            padding: 15px;
+            font-size: 20px;
+            margin: 0 0 20px;
+
+            & span::before{
+                content: "[ ";
+            }
+            & span::after{
+                content: " ]";
+            }
+            .span-level,
+            .span-seconds{
+                color: $vars_color;
+                font-weight: bold;
+                font-size: 25px;
+            }
+
+            
+        }
+
+        // Start Game Btn
+        .start{
+            display: block;
+            width: 100%;
+            background-color: $alt_vars_color;
+            color: white;
+            padding: 15px;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: $main_transition;
+            border: none;
+            border-radius: 5px;
+            margin: 20px 0;
+            animation: brightness 10s linear infinite backwards;
+        }
+
+        // The random word
+        .random-word{
+            font-size: 50px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 30px;
+            user-select: none;
+        }
+
+        // Our Input Field
+        .input{
+         width: 100%;
+         padding: 10px;
+         font-size: 35px;
+         font-weight: bold;   
+         text-transform: capitalize;
+         border-radius: 10px;
+         border:none;
+         caret-color: $main_color;
+         text-align: center;
+         background-color: transparent;
+         transition: $main_transition;
+         color: white;
+             &:focus{
+                outline: none;
+                box-shadow: $main_color 3px 2px 20px 0px, $main_color 3px 2px 20px 0px;
+                &::placeholder{
+                    opacity: 0;
+                }
+            }
+
+            &::placeholder{
+                color: ghostwhite;
+                font-weight: normal;
+                transition: $main_transition;
+            }
+        }
+        
+        .words-box{
+            background-color: white;
+            padding: 15px;
+            font-size: 20px;
+            margin: 30px 0; 
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+
+            .word-box{
+                color: white;
+                background-color: #0389ff;
+                padding: 15px;
+                border-radius: 15px;
+            }
+        }
+        // Time Div (and its contents)
+        .time{
+            background-color: white;
+            padding: 15px;
+            font-size: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            & span{
+                color: $vars_color;
+                font-weight: bold;
+                font-size: 25px;
+            }
+        }
+
+        // Finish Game Div
+        .finish-game{
+            font-weight: bold;
+            font-size: 60px;
+            margin: 30px 0;
+            .win{
+                color: $main_color;
+            }
+            .lose{
+            color: #ff0000;
+            }
+        }
+    }
+}
+
+// Start Game Btn animation
+@keyframes brightness {
+    0%,100%{
+        filter: brightness(100%);
+    }
+    50%{
+        filter: brightness(180%);
+    }
+}
